@@ -36,5 +36,5 @@ Change these after first login.
 ## 🌐 Access
 
 - **MinIO Console UI:** `https://minio.elvisautomation.site`
-- **S3 API:** `http://5.189.190.37:9000/`
-
+- **S3 API:** `http://5.189.190.37:8000` (Replace IP with your VPS's IP address)
+- **S3 API (SSL):** `https://minio.elvisautomation.site` (Replace IP with your VPS's IP address)
