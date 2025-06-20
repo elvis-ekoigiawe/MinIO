@@ -4,37 +4,61 @@ This repository contains the setup to deploy MinIO using Docker Compose on a Coo
 
 ## 📦 What’s Inside
 
-- `docker-compose.yml` — Defines the MinIO container
+- `docker-compose.yml` — Defines the MinIO container with persistent storage
 - `.env` — Stores environment variables like root user and password
+
+---
 
 ## 🚀 Deployment Steps
 
 1. **Push this repository to GitHub or GitLab**
 
 2. **In Coolify:**
+   - Go to your Project
    - Click `+ New Resource`
    - Choose `Git Repository`
    - Paste the URL of this repo
    - Select `Docker Compose` as the build pack
+   - Set the Compose file path as `docker-compose.yml`
    - Click `Create Resource`
 
-3. **Set up your domain (e.g., `minio.elvisautomation.site`)**
+3. **Add your domain (e.g., `minio.elvisautomation.site`)**
    - Go to the **Domains** tab in Coolify
-   - Add your domain
-   - Set the exposed port to `9001`
-   - Enable SSL
+   - Click `+ Add Domain`
+   - Enter `minio.elvisautomation.site`
+   - Set the exposed port to `9000`
+   - Enable SSL (Let’s Encrypt)
+   - Save the domain
 
 4. **Click Deploy**
+
+---
 
 ## 🔐 Default Credentials
 
 - **Username:** `elvis`
 - **Password:** `Rudeboy7`
 
-Change these after first login.
+> Change these after first login inside the MinIO console for security.
+
+---
 
 ## 🌐 Access
 
-- **MinIO Console UI:** `https://minio.elvisautomation.site`
-- **S3 API:** `http://minio.elvisautomation.site` (Replace IP with your VPS's IP address)
-- **S3 API (SSL):** `https://minio.elvisautomation.site` (Replace IP with your VPS's IP address)
+- **MinIO Console UI & S3 API (HTTPS):** https://minio.elvisautomation.site
+
+---
+
+## 🧰 Useful Tips
+
+- Avoid exposing raw IP + ports (e.g., `http://5.189.190.37:8000`)
+- Always point Coolify domains to **port 9000 only**
+- Use IAM keys instead of root creds in production
+
+---
+
+## 🛡 Recommended Next Steps
+
+- Change root password
+- Create buckets and access keys for your apps
+- Enable logging and monitor usage
